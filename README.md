@@ -61,6 +61,16 @@ Ensure you have Python installed, then install the required dependencies:
 ```sh
 pip install -r requirements.txt
 ```
+        (OR)
+Install Python Dependencies
+#### **Windows/macOS**
+```sh
+pip install numpy
+pip install pandas
+pip install selenium
+pip install tqdm
+pip install fake-useragent
+```
 
 ### Step 5: Download and Set Up ChromeDriver
 1. Find your **Google Chrome version** by navigating to:

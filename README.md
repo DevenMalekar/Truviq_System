@@ -1,5 +1,3 @@
-# Truviq_System
-
 # LinkedIn Job Scraper
 
 ## Overview
@@ -7,7 +5,7 @@ This project is a LinkedIn job scraper that allows users to extract job listings
 
 ## Prerequisites
 Before running the script, ensure that your system meets the following requirements:
-- **Operating System:** Windows, macOS, or Linux
+- **Operating System:** Windows or macOS
 - **Python Version:** Python 3.7 or later
 - **Google Chrome** (latest version)
 - **ChromeDriver** (matching your Chrome version)
@@ -33,34 +31,48 @@ Before running the script, ensure that your system meets the following requireme
    git --version
    ```
 
-#### **Linux**
-1. Install Git using the package manager:
+### Step 2: Install Python
+#### **Windows**
+1. Download Python from [python.org](https://www.python.org/downloads/)
+2. Run the installer and check "Add Python to PATH" before proceeding
+3. Verify installation:
    ```sh
-   sudo apt install git  # Debian/Ubuntu
-   sudo yum install git  # CentOS/RHEL
+   python --version
+   ```
+
+#### **macOS**
+1. Install Python using Homebrew:
+   ```sh
+   brew install python
    ```
 2. Verify installation:
    ```sh
-   git --version
+   python3 --version
    ```
 
-### Step 2: Clone the Repository
+### Step 3: Clone the Repository
 ```sh
-git clone https://github.com/your-repo/linkedin-job-scraper.git
-cd linkedin-job-scraper
+git clone https://github.com/DevenMalekar/Truviq_System.git
+cd Truviq_System
 ```
 
-### Step 3: Install Python Dependencies
-Ensure you have Python 3 installed, then install the required dependencies:
+### Step 4: Install Python Dependencies
+Ensure you have Python installed, then install the required dependencies:
 ```sh
 pip install -r requirements.txt
 ```
 
-### Step 4: Download and Set Up ChromeDriver
+### Step 5: Download and Set Up ChromeDriver
 1. Find your **Google Chrome version** by navigating to:
-   - **Windows/macOS/Linux:** Open Chrome and go to `chrome://settings/help`
+   - **Windows/macOS:** Open Chrome and go to `chrome://settings/help`
 2. Download the matching **ChromeDriver** from [ChromeDriver Downloads](https://chromedriver.chromium.org/downloads)
 3. Extract the ChromeDriver and move it to the project directory
+4. Add ChromeDriver to the system PATH:
+   - **Windows:** Move `chromedriver.exe` to a known location and add its directory to the PATH variable.
+   - **macOS:** Move `chromedriver` to `/usr/local/bin/`:
+     ```sh
+     mv chromedriver /usr/local/bin/
+     ```
 
 ## Running the Scraper
 
@@ -69,10 +81,15 @@ pip install -r requirements.txt
 - Modify the `URLS` list with LinkedIn job search URLs you want to scrape.
 
 ### Run the Scraper
+#### **Windows**
 ```sh
 python Main.py
 ```
-The script will display a progress bar as it scrapes each URL, and the extracted job data will be saved in `linkedin-jobs.csv`.
+#### **macOS**
+```sh
+python3 Main.py
+```
+The script will display a progress bar as it scrapes each URL, and the extracted job data will be saved in `linkedin_jobs.csv`.
 
 ## Structure of Scraped Data
 | Column Name     | Definition                                        |
@@ -83,10 +100,8 @@ The script will display a progress bar as it scrapes each URL, and the extracted
 | company_url     | Company's LinkedIn URL                            |
 | location        | Job's location                                    |
 
-
 ## Notes
 - Ensure that you comply with LinkedIn's scraping policies and terms of service.
 - If the script encounters issues, check if ChromeDriver is compatible with your Chrome version.
-
 
 
